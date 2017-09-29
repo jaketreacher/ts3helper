@@ -1,0 +1,7 @@
+# ts3extension-start
+if [ ! -z "$TEAMSPEAK" ]; then
+    get_srv_state $TEAMSPEAK
+    data="$data\nNAME='$TEAMSPEAK' SYSTEM='Voice Chat'"
+    data="$data STATE='$state' CPU='$cpu' MEM='$mem' RTIME='$rtime'"
+fi
+# ts3extension-end

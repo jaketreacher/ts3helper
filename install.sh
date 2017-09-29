@@ -65,7 +65,7 @@ if [ $(whoami) != "root" ]; then echo "Permission denied."; exit; fi
 
 # Download ts3server
 if [ ! -e $TS3_ARCHIVE ]; then
-    download_teamspeak server_linux_amd64 || echo "Download failed."; exit 1;
+    download_teamspeak server_linux_amd64 || { echo "Download failed."; exit 1; }
 else
     echo "Using previously downloaded archive."
 fi

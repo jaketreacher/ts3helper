@@ -1,5 +1,4 @@
-
-# TeamSpeak 3 Helper 0.1dev
+# TeamSpeak 3 Helper 0.1
 
 ## Synopsis
 A script script that will download and configure TeamSpeak 3.  

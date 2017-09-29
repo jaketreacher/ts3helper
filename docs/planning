@@ -1,0 +1,20 @@
+== vesta.conf ==
+++ TEAMSPEAK='ts3server'
+
+== v-change-sys-service-config ==
+++ ts3server)      dst='/usr/local/teamspeak/ts3server.ini';;
+++ ts3server-1)    dst='/usr/local/teamspeak/ts3db.ini';;
+
+== v-open-fs-config ==
+++ services="$services|ts3server"
+
+== v-list-sys-services ==
+# Checking Teamspeak extention
+if [ ! -z "$TEAMSPEAK" ]; then
+    get_srv_state $TEAMSPEAK
+    data="$data\nNAME='$TEAMSPEAK' SYSTEM='TeamSpeak 3'"
+    data="$data STATE='$state' CPU='$cpu' MEM='$mem' RTIME='$rtime'"
+fi
+
+== teamspeak ==
+cp redist/libmariado.so.2 ../
